@@ -2,13 +2,49 @@
 <html>
 <head>
     <title>Spotify Authorization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #2b2b2b;
+            color: white;
+        }
+        .container {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .url-box {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            word-break: break-all;
+            text-align: left;
+        }
+        h1 {
+            color: #1DB954;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body>
-    <h1>Authorization Successful</h1>
-    <p>You can close this window and return to Discord.</p>
+    <div class="container">
+        <h1>Spotify Authorization Successful</h1>
+        <p>You can now return to Discord and use the following URL with the spotify callback command:</p>
+        <div class="url-box" id="currentUrl"></div>
+        <p>Copy the entire URL above and paste it in Discord after the command: <br><strong>!spotify callback [URL]</strong></p>
+    </div>
     <script>
-        // The URL will contain the authorization code
-        document.body.innerHTML += "<br>Redirect URL (copy this to Discord):<br>" + window.location.href;
+        document.getElementById('currentUrl').textContent = window.location.href;
     </script>
 </body>
 </html>
