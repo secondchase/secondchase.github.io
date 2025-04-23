@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spotify Authorization</title>
+</head>
+<body>
+    <h1>Authorization Successful</h1>
+    <p>You can close this window and return to Discord.</p>
+    <script>
+        // The URL will contain the authorization code
+        document.body.innerHTML += "<br>Redirect URL (copy this to Discord):<br>" + window.location.href;
+    </script>
+</body>
+</html>
